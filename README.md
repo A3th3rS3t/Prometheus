@@ -13,10 +13,10 @@ cd /opt/docker/
 ```
 Клонируйте репозиторий с GitHub:
 ```bash
-git clone https://github.com/A3th3rS3t/Prometheus-docker.git
+git clone https://github.com/A3th3rS3t/Prometheus.git
 ```
 ```bash
-cd Prometheus-docker
+cd Prometheus
 ```
 
 ## 3. Запуск сервисов через Docker Compose
