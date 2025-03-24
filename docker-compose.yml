@@ -1,0 +1,24 @@
+---
+services:
+  prometheus:
+    image: prom/prometheus:v3.2.1
+    container_name: prometheus_app
+    volumes:
+      - ./volumes/prometheus:/prometheus/
+      - ./volumes/conf:/etc/prometheus/
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - prometheus_net
+    ports:
+      - "9090:9090"
+    restart: always
+    environment:
+      - TZ=Europe/Moscow
+
+networks:
+  prometheus_net:
+    driver: bridge
